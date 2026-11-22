@@ -1,977 +1,608 @@
-<!-- CONSOLIDATED BLOCK: BASE BLOCK 1 (LOGO) + MULTI-ANGLE CARDS + BUSINESS LINES & DECKS + OUR SERVICES + CONTACT -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ABM Kabara Motors Ltd. | Trusted Auto Dealership &amp; Fleet Solutions</title>
+  <title>ABM Kabara Motors Ltd. | Kano's Trusted Car Dealer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg-dark: #0b0d12;
-      --bg-card: #131722;
-      --bg-elevated: #1a2030;
-      --text-main: #f3f4f6;
-      --text-muted: #9ca3af;
-      --accent: #eab308;
-      --accent-hover: #ca8a04;
-      --border: #262d3d;
-      --radius: 12px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button,
-    input,
-    select,
-    textarea {
-      font-family: inherit;
-    }
-
-    .abm-container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* Base Block 1: Top Logo & Navigation Bar */
-    .abm-header {
-      position: sticky;
-      top: 0;
-      z-index: 30;
-      background: rgba(11, 13, 18, 0.94);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .abm-header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      min-height: 74px;
-      gap: 16px;
-      padding: 10px 0;
-    }
-
-    .abm-logo-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 700;
-      font-size: 1.1rem;
-    }
-
-    .abm-logo-mark {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      background: var(--accent);
-      color: #111827;
-      font-weight: 800;
-      font-size: 1rem;
-      letter-spacing: 0.04em;
-    }
-
-    .abm-nav {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 18px;
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-
-    .abm-nav a:hover {
-      color: var(--accent);
-    }
-
-    /* Shared Buttons */
-    .abm-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 18px;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 0.92rem;
-      cursor: pointer;
-      border: 1px solid transparent;
-      transition: 0.2s ease;
-    }
-
-    .abm-btn-sm {
-      padding: 6px 12px;
-      font-size: 0.82rem;
-    }
-
-    .abm-btn-primary {
-      background: var(--accent);
-      color: #111827;
-    }
-
-    .abm-btn-primary:hover {
-      background: var(--accent-hover);
-    }
-
-    .abm-btn-whatsapp {
-      background: #16a34a;
-      color: #ffffff;
-    }
-
-    .abm-btn-whatsapp:hover {
-      background: #15803d;
-    }
-
-    .abm-btn-outline {
-      background: transparent;
-      border-color: var(--border);
-      color: var(--text-main);
-    }
-
-    .abm-btn-outline:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    /* Hero Section */
-    .abm-hero {
-      padding: 60px 0 48px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .abm-eyebrow {
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--accent);
-      margin-bottom: 10px;
-    }
-
-    .abm-hero h1 {
-      font-size: clamp(2.1rem, 4.5vw, 3.3rem);
-      line-height: 1.15;
-      margin-bottom: 14px;
-      max-width: 760px;
-    }
-
-    .abm-lead {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      max-width: 680px;
-      margin-bottom: 22px;
-    }
-
-    .abm-hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 28px;
-    }
-
-    .abm-highlights {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-      gap: 14px;
-      max-width: 720px;
-    }
-
-    .abm-highlight-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 13px 16px;
-    }
-
-    .abm-highlight-box strong {
-      display: block;
-      font-size: 0.96rem;
-    }
-
-    .abm-highlight-box span {
-      font-size: 0.84rem;
-      color: var(--text-muted);
-    }
-
-    /* Unified Section Rhythm */
-    .abm-section {
-      padding: 58px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .abm-section-head {
-      margin-bottom: 24px;
-    }
-
-    .abm-section-head h2 {
-      font-size: clamp(1.5rem, 3vw, 2.15rem);
-      margin-bottom: 6px;
-    }
-
-    .abm-section-head p {
-      color: var(--text-muted);
-      max-width: 680px;
-    }
-
-    /* Filter Panel */
-    .abm-filter-panel {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 18px;
-      margin-bottom: 20px;
-      display: grid;
-      gap: 14px;
-    }
-
-    .abm-search {
-      width: 100%;
-      padding: 11px 14px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: var(--bg-dark);
-      color: var(--text-main);
-      font-size: 0.94rem;
-    }
-
-    .abm-filter-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .abm-filter-label {
-      font-size: 0.74rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-      margin-right: 6px;
-      text-transform: uppercase;
-    }
-
-    .abm-chip {
-      padding: 6px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: var(--bg-elevated);
-      color: var(--text-muted);
-      font-size: 0.82rem;
-      cursor: pointer;
-    }
-
-    .abm-chip.active,
-    .abm-chip:hover {
-      background: var(--accent);
-      color: #111827;
-      border-color: var(--accent);
-      font-weight: 600;
-    }
-
-    .abm-inventory-bar {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 20px;
-      color: var(--text-muted);
-      font-size: 0.92rem;
-    }
-
-    /* Multi-Angle Inspection Cards */
-    .abm-vehicle-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 22px;
-    }
-
-    .abm-vehicle-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .abm-media {
-      background: var(--bg-elevated);
-      padding: 18px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .abm-angle-badge {
-      display: inline-block;
-      font-size: 0.74rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--accent);
-      margin-bottom: 6px;
-    }
-
-    .abm-angle-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-
-    .abm-angle-notes {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-      min-height: 44px;
-    }
-
-    .abm-angle-tabs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .abm-angle-btn {
-      padding: 5px 10px;
-      border-radius: 6px;
-      border: 1px solid var(--border);
-      background: var(--bg-card);
-      color: var(--text-muted);
-      font-size: 0.78rem;
-      cursor: pointer;
-    }
-
-    .abm-angle-btn.active,
-    .abm-angle-btn:hover {
-      background: var(--accent);
-      color: #111827;
-      border-color: var(--accent);
-      font-weight: 600;
-    }
-
-    .abm-card-body {
-      padding: 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      flex: 1;
-    }
-
-    .abm-card-top {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 10px;
-    }
-
-    .abm-card-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-    }
-
-    .abm-price {
-      color: var(--accent);
-      font-weight: 700;
-      font-size: 1rem;
-      white-space: nowrap;
-    }
-
-    .abm-meta {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    .abm-card-actions {
-      margin-top: auto;
-      padding-top: 8px;
-      display: flex;
-      gap: 10px;
-    }
-
-    /* Business Lines & Decks */
-    .abm-deck-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-    }
-
-    .abm-deck-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .abm-deck-card h3 {
-      font-size: 1.1rem;
-    }
-
-    .abm-deck-card p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      flex: 1;
-    }
-
-    .abm-deck-preview {
-      margin-top: 20px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px;
-      display: none;
-    }
-
-    .abm-deck-preview.open {
-      display: block;
-    }
-
-    /* Services & About & Contact */
-    .abm-two-col {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 18px;
-    }
-
-    .abm-info-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px;
-    }
-
-    .abm-info-card h3 {
-      margin-bottom: 8px;
-      font-size: 1.08rem;
-    }
-
-    .abm-info-card p,
-    .abm-info-card li {
-      color: var(--text-muted);
-      font-size: 0.92rem;
-    }
-
-    .abm-info-card ul {
-      padding-left: 18px;
-      margin-top: 8px;
-    }
-
-    .abm-form {
-      display: grid;
-      gap: 12px;
-    }
-
-    .abm-input {
-      width: 100%;
-      padding: 10px 12px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: var(--bg-dark);
-      color: var(--text-main);
-      font-size: 0.92rem;
-    }
-
-    .abm-footer {
-      padding: 28px 0;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.88rem;
-    }
+    body { font-family: 'Inter', sans-serif; background-color: #0b0d10; color: #f3f4f6; }
+    .gold-text { color: #facc15; }
+    .gold-bg { background-color: #facc15; color: #0b0d10; }
+    .gold-bg:hover { background-color: #eab308; }
+    .card-bg { background-color: #13171d; border: 1px solid #1f252e; }
   </style>
 </head>
-<body>
-  <header class="abm-header">
-    <div class="abm-container abm-header-inner">
-      <a href="#top" class="abm-logo-link">
-        <span class="abm-logo-mark">ABM</span>
-        <span>ABM Kabara Motors Ltd.</span>
+<body class="antialiased selection:bg-yellow-400 selection:text-black">
+
+  <!-- TOP STAFF / VISITOR BAR -->
+  <div class="bg-[#111419] border-b border-gray-800 px-4 py-2.5 text-xs">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2 text-gray-300">
+        <span id="modeBadge" class="px-2.5 py-0.5 rounded-full bg-gray-800 text-gray-200 font-medium">
+          Visitor Mode (View &amp; Enquire Only)
+        </span>
+        <span id="modeSubtext" class="hidden sm:inline text-gray-400">
+          Authorized staff can log in to manage inventory, services &amp; socials.
+        </span>
+      </div>
+      <button id="authBtn" onclick="toggleAuthModal()" class="gold-bg font-semibold px-3.5 py-1.5 rounded-md transition cursor-pointer">
+        Authorized Login
+      </button>
+    </div>
+  </div>
+
+  <!-- MAIN NAVIGATION -->
+  <header class="sticky top-0 z-40 bg-[#0b0d10]/95 backdrop-blur border-b border-gray-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="#" class="text-lg sm:text-xl font-bold tracking-tight text-white">
+        ABM Kabara Motors Ltd.
       </a>
-      <nav class="abm-nav" aria-label="Primary Navigation">
-        <a href="#inventory">Inventory</a>
-        <a href="#business-lines">Business Lines</a>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+        <a href="#inventory" class="hover:text-yellow-400 transition">Inventory</a>
+        <a href="#services" class="hover:text-yellow-400 transition">Services</a>
+        <a href="#about" class="hover:text-yellow-400 transition">About</a>
+        <a href="#contact" class="hover:text-yellow-400 transition">Contact</a>
       </nav>
+      <a href="https://wa.me/2348166862712" target="_blank" class="md:hidden text-xs bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-3 py-1.5 rounded-md">
+        WhatsApp
+      </a>
     </div>
   </header>
 
-  <main id="top">
-    <section class="abm-hero">
-      <div class="abm-container">
-        <div class="abm-eyebrow">Kano &bull; Automotive &amp; Fleet Solutions</div>
-        <h1>Reliable Vehicles &amp; Commercial Fleet Support from ABM Kabara Motors Ltd.</h1>
-        <p class="abm-lead">
-          Browse inspected passenger cars, SUVs, and utility vehicles with angle-by-angle condition notes,
-          explore our business line decks, and connect directly with our team.
+  <!-- HERO SECTION -->
+  <section class="relative overflow-hidden border-b border-gray-800/80 bg-gradient-to-b from-[#13171d] to-[#0b0d10] py-16 sm:py-24 px-4 sm:px-6">
+    <div class="max-w-7xl mx-auto">
+      <p class="text-xs sm:text-sm font-bold tracking-widest uppercase gold-text mb-3">
+        KANO'S TRUSTED CAR DEALER
+      </p>
+      <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white max-w-3xl leading-tight mb-5">
+        Drive your dream car today.
+      </h1>
+      <p class="text-base sm:text-lg text-gray-300 max-w-2xl mb-8 leading-relaxed">
+        Tokunbo and Nigerian Used: SUVs, sedans, trucks, and luxury vehicles — inspected and ready to hit the road.
+      </p>
+      <div class="flex flex-wrap items-center gap-4 mb-12">
+        <a href="#inventory" class="gold-bg font-bold px-6 py-3.5 rounded-lg text-sm sm:text-base transition shadow-lg">
+          View Inventory
+        </a>
+        <a href="https://wa.me/2348166862712?text=Hello%20ABM%20Kabara%20Motors%2C%20I%20would%20like%20to%20make%20an%20enquiry." target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-3.5 rounded-lg text-sm sm:text-base transition shadow-lg">
+          Chat on WhatsApp
+        </a>
+      </div>
+
+      <!-- HIGHLIGHTS BAR -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl pt-6 border-t border-gray-800">
+        <div>
+          <span class="font-bold text-white block">Tokunbo</span>
+          <span class="text-sm text-gray-400">Foreign used</span>
+        </div>
+        <div>
+          <span class="font-bold text-white block">Nigerian Used</span>
+          <span class="text-sm text-gray-400">Every budget</span>
+        </div>
+        <div>
+          <span class="font-bold text-white block">Open Daily</span>
+          <span class="text-sm text-gray-400">09:00 – 18:00 hrs</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED INVENTORY SECTION -->
+  <section id="inventory" class="py-16 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+      <div>
+        <p class="text-xs font-bold tracking-widest uppercase gold-text mb-2">FEATURED INVENTORY</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-2">Vehicles in Our Showroom</h2>
+        <p class="text-sm text-gray-400 max-w-2xl">
+          Filter by body type or condition. Switch angle tabs on any card to check front, back, engine, boot, interior, sides, or engine sound video.
         </p>
-        <div class="abm-hero-actions">
-          <a href="#inventory" class="abm-btn abm-btn-primary">Browse Inventory</a>
-          <a href="#business-lines" class="abm-btn abm-btn-outline">View Business Lines</a>
-          <a id="abmHeroWhatsApp" href="https://wa.me/2348000000000" target="_blank" rel="noopener" class="abm-btn abm-btn-whatsapp">Chat on WhatsApp</a>
-        </div>
-        <div class="abm-highlights">
-          <div class="abm-highlight-box">
-            <strong>Multi-Angle Checks</strong>
-            <span>Exterior, interior, and engine notes</span>
-          </div>
-          <div class="abm-highlight-box">
-            <strong>Direct Enquiries</strong>
-            <span>Fast WhatsApp &amp; showroom response</span>
-          </div>
-          <div class="abm-highlight-box">
-            <strong>Commercial Support</strong>
-            <span>Fleet &amp; business line decks</span>
-          </div>
-        </div>
       </div>
-    </section>
+      <!-- STAFF ADD VEHICLE BUTTON (HIDDEN IN VISITOR MODE) -->
+      <button id="addVehicleBtn" onclick="openAddVehicleModal()" class="hidden gold-bg font-bold px-4 py-2.5 rounded-lg text-sm cursor-pointer">
+        + Add New Vehicle
+      </button>
+    </div>
 
-    <section id="inventory" class="abm-section">
-      <div class="abm-container">
-        <div class="abm-section-head">
-          <h2>Vehicle Showroom &amp; Multi-Angle Inspection</h2>
-          <p>Filter vehicles by condition, make, or body style, then switch inspection angles inside each card.</p>
-        </div>
-
-        <div class="abm-filter-panel">
-          <input id="abmSearchInput" type="search" class="abm-search" placeholder="Search by model, make, or body type (e.g. Corolla, Hilux, SUV)..." />
-
-          <div id="abmConditionRow" class="abm-filter-row">
-            <span class="abm-filter-label">Condition</span>
-            <button type="button" class="abm-chip active" data-filter="condition" data-value="all">All</button>
-            <button type="button" class="abm-chip" data-filter="condition" data-value="Foreign Used">Foreign Used</button>
-            <button type="button" class="abm-chip" data-filter="condition" data-value="Nigerian Used">Nigerian Used</button>
-          </div>
-
-          <div id="abmMakeRow" class="abm-filter-row">
-            <span class="abm-filter-label">Make</span>
-            <button type="button" class="abm-chip active" data-filter="make" data-value="all">All Makes</button>
-            <button type="button" class="abm-chip" data-filter="make" data-value="Toyota">Toyota</button>
-            <button type="button" class="abm-chip" data-filter="make" data-value="Lexus">Lexus</button>
-            <button type="button" class="abm-chip" data-filter="make" data-value="Hyundai">Hyundai</button>
-          </div>
-
-          <div id="abmBodyRow" class="abm-filter-row">
-            <span class="abm-filter-label">Body</span>
-            <button type="button" class="abm-chip active" data-filter="body" data-value="all">All Body Types</button>
-            <button type="button" class="abm-chip" data-filter="body" data-value="Sedan">Sedan</button>
-            <button type="button" class="abm-chip" data-filter="body" data-value="SUV">SUV</button>
-            <button type="button" class="abm-chip" data-filter="body" data-value="Pickup">Pickup</button>
-          </div>
-        </div>
-
-        <div class="abm-inventory-bar">
-          <span id="abmCountText">Showing 3 vehicles</span>
-          <button id="abmResetFilters" type="button" class="abm-btn abm-btn-sm abm-btn-outline">Reset Filters</button>
-        </div>
-
-        <div id="abmVehicleGrid" class="abm-vehicle-grid"></div>
+    <!-- SEARCH & FILTER CONTROLS -->
+    <div class="card-bg rounded-xl p-4 sm:p-6 mb-8 space-y-5">
+      <!-- SEARCH BOX -->
+      <div>
+        <input
+          type="text"
+          id="searchInput"
+          oninput="applyFilters()"
+          placeholder="Search make, model or keyword (e.g. Highlander, 2016, Automatic)..."
+          class="w-full bg-[#0b0d10] border border-gray-700 rounded-lg px-4 py-3 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-yellow-400"
+        />
       </div>
-    </section>
 
-    <section id="business-lines" class="abm-section">
-      <div class="abm-container">
-        <div class="abm-section-head">
-          <h2>Business Lines &amp; Presentation Decks</h2>
-          <p>Open a business line brief below to review scope, target clients, and key takeaways.</p>
-        </div>
-
-        <div id="abmDeckGrid" class="abm-deck-grid"></div>
-        <div id="abmDeckPreview" class="abm-deck-preview" aria-live="polite"></div>
+      <!-- CONDITION FILTER -->
+      <div>
+        <p class="text-[11px] font-bold tracking-wider uppercase text-gray-400 mb-2">CONDITION</p>
+        <div id="conditionFilters" class="flex flex-wrap gap-2"></div>
       </div>
-    </section>
 
-    <section id="services" class="abm-section">
-      <div class="abm-container">
-        <div class="abm-section-head">
-          <h2>Our Services</h2>
-          <p>Practical automotive support for individual buyers, families, and corporate operators.</p>
-        </div>
-        <div class="abm-two-col">
-          <div class="abm-info-card">
-            <h3>Vehicle Sales &amp; Sourcing</h3>
-            <p>Curated sedans, SUVs, and pickups inspected before listing so buyers know what to expect.</p>
-            <ul>
-              <li>Multi-point body, cabin, and engine checks</li>
-              <li>Transparent pricing and direct enquiry support</li>
-            </ul>
-          </div>
-          <div class="abm-info-card">
-            <h3>Commercial &amp; Fleet Advisory</h3>
-            <p>Tailored vehicle supply and operational planning for organizations and transport needs.</p>
-            <ul>
-              <li>Unit selection matched to road and load demands</li>
-              <li>Structured briefs for fleet procurement</li>
-            </ul>
-          </div>
-        </div>
+      <!-- MAKE FILTER -->
+      <div>
+        <p class="text-[11px] font-bold tracking-wider uppercase text-gray-400 mb-2">MAKE</p>
+        <div id="makeFilters" class="flex flex-wrap gap-2"></div>
       </div>
-    </section>
 
-    <section id="about" class="abm-section">
-      <div class="abm-container">
-        <div class="abm-section-head">
-          <h2>About ABM Kabara Motors Ltd.</h2>
-          <p>Built on straight talk, dependable vehicles, and responsive customer service in Kano.</p>
+      <!-- BODY TYPE FILTER -->
+      <div>
+        <p class="text-[11px] font-bold tracking-wider uppercase text-gray-400 mb-2">BODY TYPE</p>
+        <div id="bodyFilters" class="flex flex-wrap gap-2"></div>
+      </div>
+
+      <!-- COUNT & RESET -->
+      <div class="pt-3 border-t border-gray-800 flex items-center justify-between text-sm">
+        <p class="text-gray-300">Available no.: <strong id="vehicleCount" class="text-yellow-400">7</strong> vehicles</p>
+        <button onclick="resetFilters()" class="text-xs font-semibold text-gray-400 hover:text-white underline cursor-pointer">
+          Reset Filters
+        </button>
+      </div>
+    </div>
+
+    <!-- INVENTORY GRID -->
+    <div id="inventoryGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </section>
+
+  <!-- OUR SERVICES SECTION -->
+  <section id="services" class="py-16 sm:py-20 px-4 sm:px-6 bg-[#0e1116] border-y border-gray-800/80">
+    <div class="max-w-7xl mx-auto">
+      <p class="text-xs font-bold tracking-widest uppercase gold-text mb-2">OUR SERVICES</p>
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-2">What ABM Kabara Motors Offers</h2>
+      <p class="text-sm text-gray-400 mb-10">Core dealership solutions tailored for buyers in Kano and across Nigeria.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="card-bg rounded-xl p-6">
+          <span class="text-sm font-extrabold gold-text block mb-3">01</span>
+          <h3 class="text-xl font-bold text-white mb-2">Tokunbo &amp; Nigerian Used Sales</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Carefully selected SUVs, sedans, trucks, pick-ups, and luxury vehicles for personal and business use.
+          </p>
         </div>
-        <div class="abm-info-card">
-          <h3>Straightforward Dealership Standards</h3>
-          <p>
-            ABM Kabara Motors Ltd. focuses on clear vehicle condition reporting, practical recommendations,
-            and fast communication so buyers and fleet partners can make confident decisions without guesswork.
+
+        <div class="card-bg rounded-xl p-6">
+          <span class="text-sm font-extrabold gold-text block mb-3">02</span>
+          <h3 class="text-xl font-bold text-white mb-2">Vehicle Sourcing &amp; Inspection</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Targeted sourcing based on your preferred make, model, and budget in Kano.
+          </p>
+        </div>
+
+        <div class="card-bg rounded-xl p-6">
+          <span class="text-sm font-extrabold gold-text block mb-3">03</span>
+          <h3 class="text-xl font-bold text-white mb-2">Direct WhatsApp Enquiries</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Instant vehicle-specific enquiries, availability checks, and viewing arrangements.
           </p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="contact" class="abm-section">
-      <div class="abm-container">
-        <div class="abm-section-head">
-          <h2>Contact &amp; Quick Enquiry</h2>
-          <p>Send a quick enquiry or reach out directly on WhatsApp.</p>
+  <!-- ABOUT & CONTACT SECTION -->
+  <section id="about" class="py-16 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- ABOUT US -->
+      <div>
+        <p class="text-xs font-bold tracking-widest uppercase gold-text mb-2">ABOUT US</p>
+        <h2 class="text-3xl font-bold text-white mb-4">ABM Kabara Motors Ltd.</h2>
+        <p class="text-gray-300 leading-relaxed mb-6">
+          Serving buyers in Kano and across Nigeria with transparent vehicle listings, reliable options across budgets, and open showroom hours daily from 09:00 – 18:00 hrs.
+        </p>
+        <div class="card-bg rounded-xl p-5 space-y-2 text-sm">
+          <p class="text-gray-400"><strong class="text-white">Showroom Hours:</strong> Daily, 09:00 – 18:00 hrs</p>
+          <p class="text-gray-400"><strong class="text-white">Location:</strong> Kano, Nigeria</p>
+          <p class="text-gray-400"><strong class="text-white">Inspection Policy:</strong> Multi-angle photos &amp; engine sound checks available</p>
         </div>
-        <div class="abm-two-col">
-          <div class="abm-info-card">
-            <h3>Reach Our Team</h3>
-            <p><strong>Location:</strong> Kano, Nigeria</p>
-            <p><strong>Hours:</strong> Monday – Saturday, 8:30 AM – 6:00 PM</p>
-            <p style="margin-top: 12px;">
-              <a id="abmContactWhatsApp" href="https://wa.me/2348000000000" target="_blank" rel="noopener" class="abm-btn abm-btn-whatsapp">Message on WhatsApp</a>
-            </p>
+      </div>
+
+      <!-- CONTACT SHOWROOM -->
+      <div id="contact">
+        <p class="text-xs font-bold tracking-widest uppercase gold-text mb-2">GET IN TOUCH</p>
+        <h2 class="text-3xl font-bold text-white mb-6">Contact Showroom</h2>
+
+        <div class="space-y-4">
+          <div class="card-bg rounded-xl p-5">
+            <h3 class="text-base font-bold text-white mb-1">WhatsApp &amp; Phone</h3>
+            <p class="text-sm text-gray-300 mb-3">+234 816 686 2712 — Open daily 09:00 – 18:00 hrs.</p>
+            <a href="https://wa.me/2348166862712" target="_blank" class="inline-block bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-4 py-2 rounded-md transition">
+              Message on WhatsApp
+            </a>
           </div>
-          <div class="abm-info-card">
-            <h3>Send an Enquiry</h3>
-            <form id="abmEnquiryForm" class="abm-form">
-              <input id="abmEnquiryName" type="text" class="abm-input" placeholder="Your name" required />
-              <input id="abmEnquiryPhone" type="text" class="abm-input" placeholder="Phone or WhatsApp number" required />
-              <textarea id="abmEnquiryMessage" rows="3" class="abm-input" placeholder="Which vehicle or business line are you interested in?" required></textarea>
-              <button type="submit" class="abm-btn abm-btn-primary">Prepare WhatsApp Enquiry</button>
-            </form>
+
+          <div class="card-bg rounded-xl p-5">
+            <h3 class="text-base font-bold text-white mb-1">Location</h3>
+            <p class="text-sm text-gray-300">Kano, Nigeria — Available for inspected Tokunbo and Nigerian Used vehicles.</p>
+          </div>
+
+          <div class="card-bg rounded-xl p-5">
+            <h3 class="text-base font-bold text-white mb-1">Live Social Media Handles</h3>
+            <p class="text-xs text-gray-400 mb-3">Connect with us on social media.</p>
+            <ul class="space-y-2 text-sm">
+              <li class="flex items-center justify-between">
+                <span class="text-gray-300"><strong>Instagram:</strong> @abmkabaramotors</span>
+                <a href="https://instagram.com/abmkabaramotors" target="_blank" class="gold-text hover:underline text-xs font-semibold">Visit &rarr;</a>
+              </li>
+              <li class="flex items-center justify-between">
+                <span class="text-gray-300"><strong>Facebook:</strong> ABM Kabara Motors Ltd.</span>
+                <a href="https://facebook.com" target="_blank" class="gold-text hover:underline text-xs font-semibold">Visit &rarr;</a>
+              </li>
+              <li class="flex items-center justify-between">
+                <span class="text-gray-300"><strong>TikTok:</strong> @abmkabaramotors</span>
+                <a href="https://tiktok.com/@abmkabaramotors" target="_blank" class="gold-text hover:underline text-xs font-semibold">Visit &rarr;</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    </section>
-  </main>
-
-  <footer class="abm-footer">
-    <div class="abm-container">
-      &copy; <span id="abmYear">2026</span> ABM Kabara Motors Ltd. All rights reserved.
     </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-800 py-8 px-4 text-center text-xs text-gray-500">
+    &copy; 2026 ABM Kabara Motors Ltd. All rights reserved.
   </footer>
 
+  <!-- STAFF AUTHORIZED LOGIN MODAL -->
+  <div id="authModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="card-bg rounded-xl max-w-md w-full p-6 space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-lg font-bold text-white">Authorized Staff Login</h3>
+        <button onclick="toggleAuthModal()" class="text-gray-400 hover:text-white text-xl cursor-pointer">&times;</button>
+      </div>
+      <p class="text-xs text-gray-400">Enter staff passcode to manage inventory in this browser session (Default demo passcode: <code class="text-yellow-400">kabara2026</code>).</p>
+      <input type="password" id="staffPasscode" placeholder="Enter passcode..." class="w-full bg-[#0b0d10] border border-gray-700 rounded-lg px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-yellow-400" />
+      <p id="authError" class="text-xs text-red-400 hidden">Invalid passcode. Try kabara2026.</p>
+      <div class="flex justify-end gap-2 pt-2">
+        <button onclick="toggleAuthModal()" class="px-4 py-2 text-xs text-gray-300 hover:text-white cursor-pointer">Cancel</button>
+        <button onclick="loginStaff()" class="gold-bg px-4 py-2 rounded-lg text-xs font-bold cursor-pointer">Unlock Staff Mode</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAFF ADD VEHICLE MODAL -->
+  <div id="addVehicleModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="card-bg rounded-xl max-w-md w-full p-6 space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-lg font-bold text-white">Add Vehicle to Showroom</h3>
+        <button onclick="closeAddVehicleModal()" class="text-gray-400 hover:text-white text-xl cursor-pointer">&times;</button>
+      </div>
+      <div class="space-y-3 text-sm">
+        <input id="newTitle" type="text" placeholder="Title (e.g. 2018 Toyota Corolla)" class="w-full bg-[#0b0d10] border border-gray-700 rounded-lg px-3 py-2 text-white" />
+        <div class="grid grid-cols-2 gap-2">
+          <select id="newMake" class="bg-[#0b0d10] border border-gray-700 rounded-lg px-3 py-2 text-white">
+            <option>Toyota</option><option>Honda</option><option>M/Benz</option><option>Lexus</option>
+            <option>Volkswagen</option><option>Peugeot</option><option>Kia</option><option>Ford</option>
+            <option>Chevrolet</option><option>Hyundai</option>
+          </select>
+          <select id="newBody" class="bg-[#0b0d10] border border-gray-700 rounded-lg px-3 py-2 text-white">
+            <option>SUVs</option><option>Sedans</option><option>Trucks</option><option>Luxury</option><option>Pick-up</option>
+          </select>
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <select id="newCondition" class="bg-[#0b0d10] border border-gray-700 rounded-lg px-3 py-2 text-white">
+            <option>Tokunbo</option><option>Nigerian Used</option>
+          </select>
+          <input id="newSpecs" type="text" value="Automatic · Petrol" class="bg-[#0b0d10] border border-gray-700 rounded-lg px-3 py-2 text-white" />
+        </div>
+        <input id="newFrontImg" type="text" placeholder="Front Photo URL (optional)" class="w-full bg-[#0b0d10] border border-gray-700 rounded-lg px-3 py-2 text-white" />
+      </div>
+      <div class="flex justify-end gap-2 pt-2">
+        <button onclick="closeAddVehicleModal()" class="px-4 py-2 text-xs text-gray-300 cursor-pointer">Cancel</button>
+        <button onclick="saveNewVehicle()" class="gold-bg px-4 py-2 rounded-lg text-xs font-bold cursor-pointer">Add Vehicle</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- INVENTORY DATA & INTERACTIVITY SCRIPT -->
   <script>
-    (function () {
-      const WHATSAPP_NUMBER = "2348000000000";
+    const WHATSAPP_NUMBER = "2348166862712";
+    const ANGLES = ["Front", "Back", "Engine", "Boot", "Interior", "Left", "Right", "Engine Video"];
+    const CONDITIONS = ["Any Condition", "Tokunbo", "Nigerian Used"];
+    const MAKES = ["All Makes", "Toyota", "Honda", "M/Benz", "Lexus", "Volkswagen", "Peugeot", "Kia", "Ford", "Chevrolet", "Hyundai"];
+    const BODY_TYPES = ["All Cars", "SUVs", "Sedans", "Trucks", "Luxury", "Pick-up"];
 
-      const VEHICLES = [
-        {
-          id: "veh-1",
-          title: "2018 Toyota Corolla LE",
-          make: "Toyota",
-          body: "Sedan",
-          condition: "Foreign Used",
-          price: "₦14,500,000",
-          angles: [
-            { label: "Exterior", title: "Front & Side Profile", notes: "Clean body lines, clear headlamps, and even tire tread." },
-            { label: "Interior", title: "Cabin & Dashboard", notes: "Tidy cloth seats, working AC controls, and clean instrument cluster." },
-            { label: "Engine", title: "Engine Bay Check", notes: "Smooth idle, no visible fluid leaks, and clean battery terminals." }
-          ]
-        },
-        {
-          id: "veh-2",
-          title: "2017 Lexus RX 350",
-          make: "Lexus",
-          body: "SUV",
-          condition: "Foreign Used",
-          price: "₦28,000,000",
-          angles: [
-            { label: "Exterior", title: "SUV Body & Chassis", notes: "Solid stance, clean paintwork, and intact trim." },
-            { label: "Interior", title: "Leather Cabin & Tech", notes: "Well-kept leather seating, smooth infotainment, and spacious rear row." },
-            { label: "Engine", title: "3.5L V6 Bay", notes: "Quiet startup, steady temperature, and clean hoses." }
-          ]
-        },
-        {
-          id: "veh-3",
-          title: "2016 Toyota Hilux Double Cab",
-          make: "Toyota",
-          body: "Pickup",
-          condition: "Nigerian Used",
-          price: "₦22,500,000",
-          angles: [
-            { label: "Exterior", title: "Load Bed & Frame", notes: "Practical utility deck with strong suspension stance." },
-            { label: "Interior", title: "Work & Family Cabin", notes: "Durable seat covers, clear visibility, and functional controls." },
-            { label: "Engine", title: "Drivetrain & Engine", notes: "Tested under load with solid gear shifts and responsive throttle." }
-          ]
+    // EASY-TO-EDIT VEHICLE INVENTORY LIST
+    let vehicles = [
+      {
+        id: 1,
+        title: "2013 Honda Accord",
+        make: "Honda",
+        condition: "Tokunbo",
+        bodyType: "Sedans",
+        bodyLabel: "SEDAN",
+        specs: "Automatic · Petrol",
+        photoStatus: "4/7 angle photos · No engine video yet",
+        activeAngle: "Front",
+        media: {
+          Front: "https://images.unsplash.com/photo-1619682817481-e994891cd1f5?auto=format&fit=crop&w=800&q=80",
+          Back: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=800&q=80",
+          Engine: "",
+          Boot: "",
+          Interior: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80",
+          Left: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80",
+          Right: "",
+          "Engine Video": ""
         }
-      ];
+      },
+      {
+        id: 2,
+        title: "2016 Toyota Highlander",
+        make: "Toyota",
+        condition: "Tokunbo",
+        bodyType: "SUVs",
+        bodyLabel: "SUV",
+        specs: "Automatic · Petrol",
+        photoStatus: "0/7 angle photos · No engine video yet",
+        activeAngle: "Front",
+        media: {}
+      },
+      {
+        id: 3,
+        title: "2014 Toyota Camry",
+        make: "Toyota",
+        condition: "Nigerian Used",
+        bodyType: "Sedans",
+        bodyLabel: "SEDAN",
+        specs: "Automatic · Petrol",
+        photoStatus: "0/7 angle photos · No engine video yet",
+        activeAngle: "Front",
+        media: {}
+      },
+      {
+        id: 4,
+        title: "2017 Toyota Hilux",
+        make: "Toyota",
+        condition: "Tokunbo",
+        bodyType: "Trucks",
+        bodyLabel: "TRUCK",
+        specs: "Manual · Diesel",
+        photoStatus: "0/7 angle photos · No engine video yet",
+        activeAngle: "Front",
+        media: {}
+      },
+      {
+        id: 5,
+        title: "2015 Lexus RX 350",
+        make: "Lexus",
+        condition: "Tokunbo",
+        bodyType: "Luxury",
+        bodyLabel: "LUXURY",
+        specs: "Automatic · Petrol",
+        photoStatus: "0/7 angle photos · No engine video yet",
+        activeAngle: "Front",
+        media: {}
+      },
+      {
+        id: 6,
+        title: "2013 Honda CR-V",
+        make: "Honda",
+        condition: "Nigerian Used",
+        bodyType: "SUVs",
+        bodyLabel: "SUV",
+        specs: "Automatic · Petrol",
+        photoStatus: "0/7 angle photos · No engine video yet",
+        activeAngle: "Front",
+        media: {}
+      },
+      {
+        id: 7,
+        title: "2016 Mercedes-Benz C300",
+        make: "M/Benz",
+        condition: "Tokunbo",
+        bodyType: "Luxury",
+        bodyLabel: "LUXURY",
+        specs: "Automatic · Petrol",
+        photoStatus: "0/7 angle photos · No engine video yet",
+        activeAngle: "Front",
+        media: {}
+      }
+    ];
 
-      const DECKS = [
-        {
-          id: "deck-retail",
-          title: "Retail Showroom Deck",
-          summary: "Overview of inspected personal sedans, crossovers, and SUVs ready for viewing.",
-          points: [
-            "Clear condition notes across exterior, interior, and engine checks",
-            "Direct inspection scheduling and WhatsApp walkthroughs",
-            "Transparent pricing with no hidden surprises"
-          ]
-        },
-        {
-          id: "deck-fleet",
-          title: "Corporate & Utility Fleet Deck",
-          summary: "Vehicle matching and supply support for businesses operating daily routes.",
-          points: [
-            "Pickups, sedans, and utility units selected for durability",
-            "Batch availability checks for growing company teams",
-            "Dedicated point of contact for procurement leads"
-          ]
-        },
-        {
-          id: "deck-sourcing",
-          title: "Custom Sourcing Brief",
-          summary: "How we help buyers locate specific trims, models, or budget targets.",
-          points: [
-            "Share make, model, budget range, and preferred condition",
-            "Receive vetted options matched to your requirements",
-            "Step-by-step confirmation before commitment"
-          ]
-        }
-      ];
+    let selectedCondition = "Any Condition";
+    let selectedMake = "All Makes";
+    let selectedBody = "All Cars";
+    let isStaff = false;
 
-      const state = {
-        search: "",
-        condition: "all",
-        make: "all",
-        body: "all",
-        activeAngles: {}
-      };
+    function renderFilterPills() {
+      document.getElementById("conditionFilters").innerHTML = CONDITIONS.map(c => `
+        <button onclick="setFilter('condition', '${c}')" class="px-3 py-1.5 rounded-lg text-xs font-semibold transition cursor-pointer ${selectedCondition === c ? 'gold-bg' : 'bg-[#0b0d10] text-gray-300 border border-gray-800 hover:border-gray-600'}">
+          ${c}
+        </button>
+      `).join("");
 
-      VEHICLES.forEach(function (v) {
-        state.activeAngles[v.id] = 0;
+      document.getElementById("makeFilters").innerHTML = MAKES.map(m => `
+        <button onclick="setFilter('make', '${m}')" class="px-3 py-1.5 rounded-lg text-xs font-semibold transition cursor-pointer ${selectedMake === m ? 'gold-bg' : 'bg-[#0b0d10] text-gray-300 border border-gray-800 hover:border-gray-600'}">
+          ${m}
+        </button>
+      `).join("");
+
+      document.getElementById("bodyFilters").innerHTML = BODY_TYPES.map(b => `
+        <button onclick="setFilter('body', '${b}')" class="px-3 py-1.5 rounded-lg text-xs font-semibold transition cursor-pointer ${selectedBody === b ? 'gold-bg' : 'bg-[#0b0d10] text-gray-300 border border-gray-800 hover:border-gray-600'}">
+          ${b}
+        </button>
+      `).join("");
+    }
+
+    function setFilter(type, value) {
+      if (type === "condition") selectedCondition = value;
+      if (type === "make") selectedMake = value;
+      if (type === "body") selectedBody = value;
+      renderFilterPills();
+      applyFilters();
+    }
+
+    function resetFilters() {
+      selectedCondition = "Any Condition";
+      selectedMake = "All Makes";
+      selectedBody = "All Cars";
+      document.getElementById("searchInput").value = "";
+      renderFilterPills();
+      applyFilters();
+    }
+
+    function switchAngle(vehicleId, angle) {
+      const car = vehicles.find(v => v.id === vehicleId);
+      if (car) {
+        car.activeAngle = angle;
+        applyFilters();
+      }
+    }
+
+    function deleteVehicle(vehicleId) {
+      vehicles = vehicles.filter(v => v.id !== vehicleId);
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const query = document.getElementById("searchInput").value.toLowerCase().trim();
+      const filtered = vehicles.filter(car => {
+        const matchCondition = selectedCondition === "Any Condition" || car.condition === selectedCondition;
+        const matchMake = selectedMake === "All Makes" || car.make === selectedMake;
+        const matchBody = selectedBody === "All Cars" || car.bodyType === selectedBody;
+        const matchQuery = !query ||
+          car.title.toLowerCase().includes(query) ||
+          car.specs.toLowerCase().includes(query) ||
+          car.condition.toLowerCase().includes(query) ||
+          car.bodyType.toLowerCase().includes(query);
+        return matchCondition && matchMake && matchBody && matchQuery;
       });
 
-      function buildWhatsAppUrl(text) {
-        return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(text);
+      document.getElementById("vehicleCount").textContent = filtered.length;
+      const grid = document.getElementById("inventoryGrid");
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `<div class="col-span-full card-bg rounded-xl p-10 text-center text-gray-400">No vehicles match your current filters. Click "Reset Filters" to view all cars.</div>`;
+        return;
       }
 
-      function renderCards() {
-        const grid = document.getElementById("abmVehicleGrid");
-        const countText = document.getElementById("abmCountText");
-        if (!grid || !countText) return;
+      grid.innerHTML = filtered.map(car => {
+        const currentMedia = car.media ? car.media[car.activeAngle] : "";
+        const whatsappMsg = encodeURIComponent(`Hello ABM Kabara Motors, I am interested in the ${car.title} (${car.condition}). Is it still available?`);
 
-        const q = state.search.trim().toLowerCase();
-        const filtered = VEHICLES.filter(function (v) {
-          const matchCondition = state.condition === "all" || v.condition === state.condition;
-          const matchMake = state.make === "all" || v.make === state.make;
-          const matchBody = state.body === "all" || v.body === state.body;
-          const matchSearch =
-            !q ||
-            v.title.toLowerCase().includes(q) ||
-            v.make.toLowerCase().includes(q) ||
-            v.body.toLowerCase().includes(q) ||
-            v.condition.toLowerCase().includes(q);
-          return matchCondition && matchMake && matchBody && matchSearch;
-        });
+        return `
+          <div class="card-bg rounded-xl overflow-hidden flex flex-col justify-between">
+            <div>
+              <!-- MEDIA PREVIEW AREA -->
+              <div class="relative h-52 bg-[#0b0d10] border-b border-gray-800 flex items-center justify-center overflow-hidden">
+                ${currentMedia
+                  ? `<img src="${currentMedia}" alt="${car.title} — ${car.activeAngle} View" class="w-full h-full object-cover" />`
+                  : `<div class="text-center px-4">
+                       <span class="block text-xs font-bold tracking-widest uppercase text-gray-500">${car.activeAngle.toUpperCase()} VIEW</span>
+                       <span class="inline-block mt-1 px-2.5 py-0.5 rounded bg-gray-800 text-[10px] font-bold tracking-wider text-yellow-400 uppercase">COMING SOON</span>
+                     </div>`
+                }
 
-        countText.textContent = "Showing " + filtered.length + (filtered.length === 1 ? " vehicle" : " vehicles");
+                <!-- TOP BADGES -->
+                <div class="absolute top-3 left-3 flex gap-1.5">
+                  <span class="px-2 py-0.5 rounded bg-emerald-600/90 text-white text-[10px] font-bold uppercase tracking-wider">AVAILABLE</span>
+                  <span class="px-2 py-0.5 rounded bg-black/80 text-yellow-400 border border-yellow-400/40 text-[10px] font-bold uppercase tracking-wider">${car.condition}</span>
+                </div>
 
-        if (!filtered.length) {
-          grid.innerHTML = '<div class="abm-info-card"><p>No vehicles match your current filter selection. Reset filters to view all units.</p></div>';
-          return;
-        }
+                ${isStaff ? `<button onclick="deleteVehicle(${car.id})" class="absolute top-3 right-3 bg-red-600 hover:bg-red-500 text-white text-[10px] font-bold px-2 py-1 rounded cursor-pointer">Delete</button>` : ""}
+              </div>
 
-        grid.innerHTML = filtered
-          .map(function (v) {
-            const angleIdx = state.activeAngles[v.id] || 0;
-            const currentAngle = v.angles[angleIdx] || v.angles[0];
-            const tabsHtml = v.angles
-              .map(function (ang, idx) {
-                const activeClass = idx === angleIdx ? "active" : "";
-                return '<button type="button" class="abm-angle-btn ' + activeClass + '" data-veh="' + v.id + '" data-angle="' + idx + '">' + ang.label + "</button>";
-              })
-              .join("");
+              <!-- ANGLE TABS -->
+              <div class="p-3 bg-[#0e1116] border-b border-gray-800 flex flex-wrap gap-1">
+                ${ANGLES.map(angle => `
+                  <button onclick="switchAngle(${car.id}, '${angle}')" class="px-2 py-1 rounded text-[11px] font-medium transition cursor-pointer ${car.activeAngle === angle ? 'gold-bg font-bold' : 'bg-[#161b22] text-gray-400 hover:text-white'}">
+                    ${angle}
+                  </button>
+                `).join("")}
+              </div>
 
-            const waLink = buildWhatsAppUrl("Hello ABM Kabara Motors Ltd., I am interested in the " + v.title + " (" + v.price + ").");
+              <!-- VEHICLE DETAILS -->
+              <div class="p-5">
+                <p class="text-[11px] font-bold tracking-wider uppercase text-yellow-400 mb-1">
+                  ${car.bodyLabel} &middot; VIEWING: ${car.activeAngle.toUpperCase()} VIEW
+                </p>
+                <h3 class="text-xl font-bold text-white mb-1">${car.title}</h3>
+                <p class="text-sm text-gray-300 mb-2">${car.specs}</p>
+                <p class="text-xs text-gray-500">${car.photoStatus}</p>
+              </div>
+            </div>
 
-            return (
-              '<article class="abm-vehicle-card">' +
-              '<div class="abm-media">' +
-              '<div class="abm-angle-badge">' + currentAngle.label + " Inspection</div>" +
-              '<div class="abm-angle-title">' + currentAngle.title + "</div>" +
-              '<p class="abm-angle-notes">' + currentAngle.notes + "</p>" +
-              '<div class="abm-angle-tabs">' + tabsHtml + "</div>" +
-              "</div>" +
-              '<div class="abm-card-body">' +
-              '<div class="abm-card-top">' +
-              '<h3 class="abm-card-title">' + v.title + "</h3>" +
-              '<span class="abm-price">' + v.price + "</span>" +
-              "</div>" +
-              '<div class="abm-meta">' + v.condition + " &bull; " + v.make + " &bull; " + v.body + "</div>" +
-              '<div class="abm-card-actions">' +
-              '<a href="' + waLink + '" target="_blank" rel="noopener" class="abm-btn abm-btn-sm abm-btn-whatsapp">Enquire on WhatsApp</a>' +
-              "</div>" +
-              "</div>" +
-              "</article>"
-            );
-          })
-          .join("");
+            <!-- ENQUIRE CTA -->
+            <div class="px-5 pb-5">
+              <a href="https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMsg}" target="_blank" class="block w-full text-center gold-bg font-bold py-2.5 rounded-lg text-sm transition">
+                Enquire
+              </a>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    // AUTH & STAFF MODAL CONTROLS
+    function toggleAuthModal() {
+      if (isStaff) {
+        isStaff = false;
+        document.getElementById("modeBadge").textContent = "Visitor Mode (View & Enquire Only)";
+        document.getElementById("authBtn").textContent = "Authorized Login";
+        document.getElementById("addVehicleBtn").classList.add("hidden");
+        applyFilters();
+        return;
       }
+      document.getElementById("authModal").classList.toggle("hidden");
+    }
 
-      function renderDecks() {
-        const deckGrid = document.getElementById("abmDeckGrid");
-        if (!deckGrid) return;
-
-        deckGrid.innerHTML = DECKS.map(function (d) {
-          return (
-            '<div class="abm-deck-card">' +
-            "<h3>" + d.title + "</h3>" +
-            "<p>" + d.summary + "</p>" +
-            '<button type="button" class="abm-btn abm-btn-sm abm-btn-outline" data-deck="' + d.id + '">Open Deck Brief</button>' +
-            "</div>"
-          );
-        }).join("");
+    function loginStaff() {
+      const pass = document.getElementById("staffPasscode").value;
+      if (pass === "kabara2026") {
+        isStaff = true;
+        document.getElementById("authError").classList.add("hidden");
+        document.getElementById("authModal").classList.add("hidden");
+        document.getElementById("modeBadge").textContent = "Staff Mode (Inventory Unlocked)";
+        document.getElementById("authBtn").textContent = "Log Out";
+        document.getElementById("addVehicleBtn").classList.remove("hidden");
+        applyFilters();
+      } else {
+        document.getElementById("authError").classList.remove("hidden");
       }
+    }
 
-      function openDeckPreview(deckId) {
-        const preview = document.getElementById("abmDeckPreview");
-        const deck = DECKS.find(function (item) {
-          return item.id === deckId;
-        });
-        if (!preview || !deck) return;
+    function openAddVehicleModal() { document.getElementById("addVehicleModal").classList.remove("hidden"); }
+    function closeAddVehicleModal() { document.getElementById("addVehicleModal").classList.add("hidden"); }
 
-        const bullets = deck.points
-          .map(function (pt) {
-            return "<li>" + pt + "</li>";
-          })
-          .join("");
+    function saveNewVehicle() {
+      const title = document.getElementById("newTitle").value.trim();
+      if (!title) return;
+      const make = document.getElementById("newMake").value;
+      const bodyType = document.getElementById("newBody").value;
+      const condition = document.getElementById("newCondition").value;
+      const specs = document.getElementById("newSpecs").value;
+      const frontImg = document.getElementById("newFrontImg").value.trim();
 
-        preview.innerHTML =
-          "<h3>" + deck.title + "</h3>" +
-          '<p style="color: var(--text-muted); margin: 6px 0 10px;">' + deck.summary + "</p>" +
-          '<ul style="padding-left: 18px; color: var(--text-main); margin-bottom: 14px;">' + bullets + "</ul>" +
-          '<button id="abmCloseDeck" type="button" class="abm-btn abm-btn-sm abm-btn-outline">Close Brief</button>';
-        preview.classList.add("open");
-      }
+      vehicles.unshift({
+        id: Date.now(),
+        title,
+        make,
+        condition,
+        bodyType,
+        bodyLabel: bodyType.replace(/s$/, "").toUpperCase(),
+        specs,
+        photoStatus: frontImg ? "1/7 angle photos · No engine video yet" : "0/7 angle photos · No engine video yet",
+        activeAngle: "Front",
+        media: { Front: frontImg }
+      });
 
-      function bindEvents() {
-        const searchInput = document.getElementById("abmSearchInput");
-        if (searchInput) {
-          searchInput.addEventListener("input", function (e) {
-            state.search = e.target.value || "";
-            renderCards();
-          });
-        }
+      document.getElementById("newTitle").value = "";
+      document.getElementById("newFrontImg").value = "";
+      closeAddVehicleModal();
+      applyFilters();
+    }
 
-        document.querySelectorAll(".abm-chip[data-filter]").forEach(function (chip) {
-          chip.addEventListener("click", function () {
-            const filterKey = chip.getAttribute("data-filter");
-            const val = chip.getAttribute("data-value");
-            state[filterKey] = val;
-
-            document.querySelectorAll('.abm-chip[data-filter="' + filterKey + '"]').forEach(function (btn) {
-              btn.classList.toggle("active", btn === chip);
-            });
-            renderCards();
-          });
-        });
-
-        const resetBtn = document.getElementById("abmResetFilters");
-        if (resetBtn) {
-          resetBtn.addEventListener("click", function () {
-            state.search = "";
-            state.condition = "all";
-            state.make = "all";
-            state.body = "all";
-            if (searchInput) searchInput.value = "";
-            document.querySelectorAll(".abm-chip[data-filter]").forEach(function (btn) {
-              btn.classList.toggle("active", btn.getAttribute("data-value") === "all");
-            });
-            renderCards();
-          });
-        }
-
-        const vehicleGrid = document.getElementById("abmVehicleGrid");
-        if (vehicleGrid) {
-          vehicleGrid.addEventListener("click", function (e) {
-            const btn = e.target.closest(".abm-angle-btn");
-            if (!btn) return;
-            const vehId = btn.getAttribute("data-veh");
-            const angleIdx = Number(btn.getAttribute("data-angle"));
-            state.activeAngles[vehId] = angleIdx;
-            renderCards();
-          });
-        }
-
-        const deckGrid = document.getElementById("abmDeckGrid");
-        if (deckGrid) {
-          deckGrid.addEventListener("click", function (e) {
-            const btn = e.target.closest("button[data-deck]");
-            if (!btn) return;
-            openDeckPreview(btn.getAttribute("data-deck"));
-          });
-        }
-
-        const deckPreview = document.getElementById("abmDeckPreview");
-        if (deckPreview) {
-          deckPreview.addEventListener("click", function (e) {
-            if (e.target && e.target.id === "abmCloseDeck") {
-              deckPreview.classList.remove("open");
-            }
-          });
-        }
-
-        const form = document.getElementById("abmEnquiryForm");
-        if (form) {
-          form.addEventListener("submit", function (e) {
-            e.preventDefault();
-            const name = document.getElementById("abmEnquiryName").value.trim();
-            const phone = document.getElementById("abmEnquiryPhone").value.trim();
-            const msg = document.getElementById("abmEnquiryMessage").value.trim();
-            const text = "Name: " + name + "\nContact: " + phone + "\nEnquiry: " + msg;
-            window.open(buildWhatsAppUrl(text), "_blank", "noopener");
-          });
-        }
-
-        const heroWa = document.getElementById("abmHeroWhatsApp");
-        const contactWa = document.getElementById("abmContactWhatsApp");
-        const defaultWa = buildWhatsAppUrl("Hello ABM Kabara Motors Ltd., I would like to enquire about your vehicles.");
-        if (heroWa) heroWa.href = defaultWa;
-        if (contactWa) contactWa.href = defaultWa;
-
-        const yearEl = document.getElementById("abmYear");
-        if (yearEl) yearEl.textContent = String(new Date().getFullYear());
-      }
-
-      renderCards();
-      renderDecks();
-      bindEvents();
-    })();
+    // INITIALIZE PAGE
+    renderFilterPills();
+    applyFilters();
   </script>
 </body>
 </html>
