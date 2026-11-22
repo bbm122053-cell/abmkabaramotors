@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ABM Kabara Motors Ltd. | Kano's Trusted Car Dealer</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 200'%3E%3Crect width='320' height='200' rx='24' fill='%23ffffff'/%3E%3Cpath d='M114 68 L206 68 L206 112 C206 144, 160 164, 160 164 C160 164, 114 144, 114 112 Z' fill='%230B1E3B' stroke='%23D4AF37' stroke-width='8'/%3E%3Ctext x='160' y='118' text-anchor='middle' fill='%23D4AF37' font-family='Arial, sans-serif' font-size='34' font-weight='800'%3EABM%3C/text%3E%3C/svg%3E" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -101,12 +102,43 @@
   <header class="sticky top-0 z-40 bg-[#0b0d10]/95 backdrop-blur border-b border-gray-800/80">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
       <a href="#" class="flex items-center gap-3 text-base sm:text-xl font-bold tracking-tight shrink-0">
-        <img
-          src="abm-logo.webp"
-          alt="ABM Kabara Motors Logo"
-          class="h-10 w-auto rounded bg-white/95 p-0.5 object-contain border border-[#D4AF37]/50"
-          onerror="this.style.display='none'"
-        />
+        <span class="h-10 w-16 rounded bg-white p-1 flex items-center justify-center border border-[#D4AF37]/70 shadow-sm shrink-0" aria-label="ABM Kabara Motors Logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" class="w-full h-full object-contain">
+            <defs>
+              <linearGradient id="abmGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#F3D678"/>
+                <stop offset="50%" stop-color="#D4AF37"/>
+                <stop offset="100%" stop-color="#9E7B1C"/>
+              </linearGradient>
+              <linearGradient id="abmNavy" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#0B1E3B"/>
+                <stop offset="50%" stop-color="#132D54"/>
+                <stop offset="100%" stop-color="#08162C"/>
+              </linearGradient>
+            </defs>
+            <path d="M122 92 C82 82, 42 56, 22 18 C24 52, 48 80, 96 96 Z" fill="#0B1E3B"/>
+            <path d="M118 104 C82 96, 48 76, 30 48 C34 76, 56 98, 98 109 Z" fill="#0B1E3B"/>
+            <path d="M115 116 C84 110, 56 96, 42 74 C46 96, 66 113, 102 121 Z" fill="#0B1E3B"/>
+            <path d="M114 127 C88 124, 66 114, 56 98 C60 115, 76 127, 106 132 Z" fill="#0B1E3B"/>
+            <path d="M198 92 C238 82, 278 56, 298 18 C296 52, 272 80, 224 96 Z" fill="#0B1E3B"/>
+            <path d="M202 104 C238 96, 272 76, 290 48 C286 76, 264 98, 222 109 Z" fill="#0B1E3B"/>
+            <path d="M205 116 C236 110, 264 96, 278 74 C274 96, 254 113, 218 121 Z" fill="#0B1E3B"/>
+            <path d="M206 127 C232 124, 254 114, 264 98 C260 115, 244 127, 214 132 Z" fill="#0B1E3B"/>
+            <path d="M114 68 L206 68 L206 112 C206 144, 160 164, 160 164 C160 164, 114 144, 114 112 Z" fill="url(#abmNavy)" stroke="url(#abmGold)" stroke-width="5"/>
+            <path d="M122 68 L124 52 C124 46, 130 42, 136 40 L144 26 C148 21, 172 21, 176 26 L184 40 C190 42, 196 46, 196 52 L198 68 Z" fill="#0B1E3B"/>
+            <path d="M146 28 L174 28 L179 38 L141 38 Z" fill="url(#abmGold)"/>
+            <path d="M128 48 L144 53 L130 55 Z" fill="url(#abmGold)"/>
+            <path d="M192 48 L176 53 L190 55 Z" fill="url(#abmGold)"/>
+            <path d="M138 60 Q160 64 182 60" stroke="url(#abmGold)" stroke-width="2.5" fill="none"/>
+            <text x="160" y="106" text-anchor="middle" fill="url(#abmGold)" font-family="Inter, Arial, sans-serif" font-size="31" font-weight="800" letter-spacing="1">ABM</text>
+            <path d="M133 116 A27 27 0 0 0 187 116 L178 116 A18 18 0 0 1 142 116 Z" fill="url(#abmGold)"/>
+            <rect x="157" y="139" width="6" height="8" fill="url(#abmGold)"/>
+            <rect x="141" y="134" width="6" height="8" transform="rotate(35 144 138)" fill="url(#abmGold)"/>
+            <rect x="173" y="134" width="6" height="8" transform="rotate(-35 176 138)" fill="url(#abmGold)"/>
+            <path d="M68 156 Q160 138 252 156 L245 184 Q160 166 75 184 Z" fill="url(#abmNavy)" stroke="url(#abmGold)" stroke-width="3"/>
+            <text x="160" y="170" text-anchor="middle" fill="url(#abmGold)" font-family="Inter, Arial, sans-serif" font-size="13.5" font-weight="800" letter-spacing="1.8">KABARA MOTORS</text>
+          </svg>
+        </span>
         <span>
           <span class="royal-gold-title">ABM</span>
           <span class="text-white">Kabara</span>
@@ -142,7 +174,6 @@
         Brand New, Tokunbo, and Nigerian Used: SUVs, sedans, trucks, and luxury vehicles — inspected and ready to hit the road.
       </p>
 
-      <!-- HERO ACTION BUTTONS IN ROYAL GOLD -->
       <div class="flex flex-wrap items-center gap-3.5 mb-12">
         <a href="#inventory" class="gold-bg font-bold px-6 py-3.5 rounded-lg text-sm sm:text-base transition shadow-lg">
           View Inventory
@@ -155,7 +186,6 @@
         </a>
       </div>
 
-      <!-- HIGHLIGHTS BAR -->
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl pt-6 border-t border-gray-800">
         <div>
           <span class="font-bold royal-gold-title block">Brand New &amp; Tokunbo</span>
@@ -183,15 +213,12 @@
           Use the centered search bar or dropdown menus below. Click any vehicle photo to enlarge and use the arrow controls to browse all angles.
         </p>
       </div>
-      <!-- STAFF ADD VEHICLE BUTTON -->
       <button id="addVehicleBtn" type="button" onclick="openShowroomEditor(null)" class="hidden gold-bg font-bold px-4 py-2.5 rounded-lg text-sm cursor-pointer shrink-0">
         + Add / Manage Vehicle
       </button>
     </div>
 
-    <!-- CLEAN CENTERED SEARCH & DROPDOWN FILTER CONTROLS (VISITORS & MANAGERS) -->
     <div class="card-bg rounded-2xl p-4 sm:p-6 mb-8 space-y-5">
-      <!-- CENTERED MAIN SEARCH BAR -->
       <div class="max-w-2xl mx-auto">
         <input
           type="text"
@@ -202,9 +229,7 @@
         />
       </div>
 
-      <!-- DROPDOWN FILTERS GRID -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <!-- CONDITION -->
         <div class="bg-[#0e1116] border border-gray-800/90 rounded-xl p-3.5 space-y-2">
           <div class="flex items-center justify-between">
             <label for="conditionSelect" class="text-[11px] font-bold tracking-wider uppercase gold-text">Condition</label>
@@ -213,7 +238,6 @@
           <select id="conditionSelect" onchange="onFilterDropdownChange('condition', this.value)" class="clean-dropdown"></select>
         </div>
 
-        <!-- ALL MAKES -->
         <div class="bg-[#0e1116] border border-gray-800/90 rounded-xl p-3.5 space-y-2">
           <div class="flex items-center justify-between">
             <label for="makeSelect" class="text-[11px] font-bold tracking-wider uppercase gold-text">All Makes</label>
@@ -222,7 +246,6 @@
           <select id="makeSelect" onchange="onFilterDropdownChange('make', this.value)" class="clean-dropdown"></select>
         </div>
 
-        <!-- ALL CARS (BODY TYPE) -->
         <div class="bg-[#0e1116] border border-gray-800/90 rounded-xl p-3.5 space-y-2">
           <div class="flex items-center justify-between">
             <label for="bodySelect" class="text-[11px] font-bold tracking-wider uppercase gold-text">All Cars</label>
@@ -231,7 +254,6 @@
           <select id="bodySelect" onchange="onFilterDropdownChange('body', this.value)" class="clean-dropdown"></select>
         </div>
 
-        <!-- YEAR -->
         <div class="bg-[#0e1116] border border-gray-800/90 rounded-xl p-3.5 space-y-2">
           <div class="flex items-center justify-between">
             <label for="yearSelect" class="text-[11px] font-bold tracking-wider uppercase gold-text">Year</label>
@@ -240,7 +262,6 @@
           <select id="yearSelect" onchange="onFilterDropdownChange('year', this.value)" class="clean-dropdown"></select>
         </div>
 
-        <!-- MODEL / TYPE -->
         <div class="bg-[#0e1116] border border-gray-800/90 rounded-xl p-3.5 space-y-2">
           <div class="flex items-center justify-between">
             <label for="modelSelect" class="text-[11px] font-bold tracking-wider uppercase gold-text">Model / Type</label>
@@ -249,7 +270,6 @@
           <select id="modelSelect" onchange="onFilterDropdownChange('model', this.value)" class="clean-dropdown"></select>
         </div>
 
-        <!-- TRANSMISSION -->
         <div class="bg-[#0e1116] border border-gray-800/90 rounded-xl p-3.5 space-y-2">
           <div class="flex items-center justify-between">
             <label for="transmissionSelect" class="text-[11px] font-bold tracking-wider uppercase gold-text">Transmission</label>
@@ -258,7 +278,6 @@
           <select id="transmissionSelect" onchange="onFilterDropdownChange('transmission', this.value)" class="clean-dropdown"></select>
         </div>
 
-        <!-- FUEL -->
         <div class="bg-[#0e1116] border border-gray-800/90 rounded-xl p-3.5 space-y-2">
           <div class="flex items-center justify-between">
             <label for="fuelSelect" class="text-[11px] font-bold tracking-wider uppercase gold-text">Fuel</label>
@@ -267,7 +286,6 @@
           <select id="fuelSelect" onchange="onFilterDropdownChange('fuel', this.value)" class="clean-dropdown"></select>
         </div>
 
-        <!-- STATUS -->
         <div class="bg-[#0e1116] border border-gray-800/90 rounded-xl p-3.5 space-y-2">
           <div class="flex items-center justify-between">
             <label for="statusSelect" class="text-[11px] font-bold tracking-wider uppercase gold-text">Status</label>
@@ -277,7 +295,6 @@
         </div>
       </div>
 
-      <!-- COUNT & RESET -->
       <div class="pt-3 border-t border-gray-800 flex items-center justify-between text-sm">
         <p class="text-gray-300">Available / Matching no.: <strong id="vehicleCount" class="gold-text">7</strong> vehicles</p>
         <button type="button" onclick="resetFilters()" class="text-xs font-semibold text-gray-400 hover:text-white underline cursor-pointer">
@@ -286,7 +303,6 @@
       </div>
     </div>
 
-    <!-- INVENTORY GRID -->
     <div id="inventoryGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
   </section>
 
@@ -338,7 +354,6 @@
           Navigate product photos, review specifications, and reach the division manager directly for details and pricing.
         </p>
       </div>
-      <!-- STAFF BUSINESS LINE EDITOR BUTTON -->
       <button id="addBusinessLineBtn" type="button" onclick="openBusinessLineEditor(null)" class="hidden gold-bg font-bold px-4 py-2.5 rounded-lg text-sm cursor-pointer shrink-0">
         + Business Line Editor
       </button>
@@ -350,7 +365,6 @@
   <!-- ABOUT & CONTACT SECTION -->
   <section id="about" class="py-16 sm:py-20 px-4 sm:px-6 max-w-7xl mx-auto">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-      <!-- ABOUT US -->
       <div>
         <p class="text-xs font-bold tracking-widest uppercase gold-text mb-2">ABOUT US</p>
         <h2 class="text-3xl font-bold text-white mb-4">ABM Kabara Motors Ltd.</h2>
@@ -365,7 +379,6 @@
         </div>
       </div>
 
-      <!-- CONTACT SHOWROOM & LIVE SOCIAL HANDLES -->
       <div id="contact">
         <div class="flex items-center justify-between gap-2 mb-6">
           <div>
@@ -422,7 +435,6 @@
       <input type="hidden" id="editVehicleId" />
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        <!-- MAKE WITH EDIT / REMOVE -->
         <div>
           <div class="flex items-center justify-between mb-1">
             <label for="vehMake" class="block text-xs font-semibold text-gray-300">Make *</label>
@@ -435,7 +447,6 @@
           <select id="vehMake" required onchange="onEditorMakeChange(this.value)" class="clean-dropdown"></select>
         </div>
 
-        <!-- MODEL WITH EDIT / REMOVE -->
         <div>
           <div class="flex items-center justify-between mb-1">
             <label for="vehModel" class="block text-xs font-semibold text-gray-300">Model / Type *</label>
@@ -659,8 +670,7 @@
       </div>
     </form>
   </div>
-
-  <script>
+<script>
     const STAFF_PASSCODE = "kabara2026";
     const STORAGE_KEY = "abm_kabara_motors_data_v1";
     const STAFF_SESSION_KEY = "abm_kabara_staff_session_v1";
@@ -991,7 +1001,6 @@
       }
     }
 
-    // AUTH & STAFF MODE
     function toggleAuthModal() {
       const modal = document.getElementById("authModal");
       const input = document.getElementById("staffPasscode");
@@ -1089,7 +1098,6 @@
       renderSocials();
     }
 
-    // CONTACTS & SOCIALS
     function syncContactsSummary() {
       const digits = cleanDigits(appData.primaryWhatsapp);
       const formatted = `+${digits.slice(0, 3)} ${digits.slice(3, 6)} ${digits.slice(6, 9)} ${digits.slice(9)}`.trim();
@@ -1191,7 +1199,6 @@
       closeSocialEditor();
     }
 
-    // DROPDOWN FILTERS & SEARCH
     const FILTER_CONFIG = [
       { key: "condition", field: "condition", selectId: "conditionSelect", labelId: "activeConditionLabel", allLabel: "All Conditions" },
       { key: "make", field: "make", selectId: "makeSelect", labelId: "activeMakeLabel", allLabel: "All Makes" },
@@ -1337,7 +1344,6 @@
       applyFilters();
     }
 
-    // INVENTORY RENDERING & PHOTO NAVIGATION
     function getVehiclePhotos(vehicle) {
       if (Array.isArray(vehicle.photos) && vehicle.photos.length) return vehicle.photos;
       return [createPlaceholderPhoto(`${vehicle.year || ""} ${vehicle.make || ""} ${vehicle.model || ""}`.trim())];
@@ -1436,7 +1442,6 @@
       }).join("");
     }
 
-    // VEHICLE EDITOR (STAFF) — MAKE & MODEL DROPDOWNS WITH ADD, EDIT & REMOVE
     function registerCatalogEntry(make, model) {
       const cleanMake = String(make || "").trim();
       const cleanModel = String(model || "").trim();
@@ -1833,7 +1838,6 @@
       applyFilters();
     }
 
-    // BUSINESS LINES
     function getBizPhotos(biz) {
       if (Array.isArray(biz.photos) && biz.photos.length) return biz.photos;
       return [createPlaceholderPhoto(biz.title || "ABM Kabara Business Line")];
@@ -1983,7 +1987,6 @@
       renderBusinessLines();
     }
 
-    // LIGHTBOX MODAL
     function openVehicleLightbox(vehicleId, startIndex = 0) {
       const v = appData.vehicles.find((item) => item.id === vehicleId);
       if (!v) return;
@@ -2054,7 +2057,6 @@
       if (event.target.id === "lightboxModal") closeLightbox();
     }
 
-    // INITIALIZE PAGE
     document.addEventListener("DOMContentLoaded", () => {
       syncContactsSummary();
       renderFilterDropdowns();
@@ -2063,3 +2065,4 @@
   </script>
 </body>
 </html>
+
