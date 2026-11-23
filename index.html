@@ -102,11 +102,24 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
       <a href="#" class="flex items-center gap-3 text-base sm:text-xl font-bold tracking-tight shrink-0">
         <img
+          id="brandLogoImg"
           src="abm-logo.webp"
           alt="ABM Kabara Motors Logo"
           class="h-10 w-auto rounded bg-white/95 p-0.5 object-contain border border-[#D4AF37]/50"
-          onerror="this.style.display='none'"
+          onload="document.getElementById('brandLogoFallback').style.display='none'"
+          onerror="this.style.display='none'; document.getElementById('brandLogoFallback').style.display='inline-flex'"
         />
+        <svg
+          id="brandLogoFallback"
+          viewBox="0 0 64 44"
+          class="h-10 w-auto rounded bg-[#13171d] p-1 border border-[#D4AF37]/50 shrink-0"
+          style="display:none"
+          aria-label="ABM Kabara Motors Emblem"
+          role="img"
+        >
+          <path d="M12 10 L52 10 L48 34 L32 40 L16 34 Z" fill="#0f172a" stroke="#D4AF37" stroke-width="2.5" />
+          <text x="32" y="27" text-anchor="middle" fill="#E5C158" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="800">ABM</text>
+        </svg>
         <span>
           <span class="royal-gold-title">ABM</span>
           <span class="text-white">Kabara</span>
