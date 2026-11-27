@@ -668,7 +668,7 @@
     const STORAGE_KEY = "abm_kabara_motors_data_v1";
     const STAFF_SESSION_KEY = "abm_kabara_staff_session_v1";
 
-    // SUPABASE CLOUD SYNC CONFIG
+   // SUPABASE CLOUD SYNC CONFIG
     const SUPABASE_URL = "https://tkfrugcgxdrizteaqjdo.supabase.co";
     const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_YCQr9A8MarGYVELVtfSgrg_gunO39P7";
     const SUPABASE_TABLE = "showroom_data";
@@ -942,10 +942,9 @@
       }
     }
 
-    function getSupabaseHeaders(preferRepresentation = false) {
+   function getSupabaseHeaders(preferRepresentation = false) {
       const headers = {
         "apikey": SUPABASE_PUBLISHABLE_KEY,
-        "Authorization": `Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
         "Content-Type": "application/json"
       };
       if (preferRepresentation) {
