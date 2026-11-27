@@ -75,9 +75,12 @@
   <!-- TOP STAFF / VISITOR BAR -->
   <div class="bg-[#111419] border-b border-gray-800 px-4 py-2.5 text-xs">
     <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
-      <div class="flex items-center gap-2 text-gray-300">
+      <div class="flex flex-wrap items-center gap-2 text-gray-300">
         <span id="modeBadge" class="px-2.5 py-0.5 rounded-full bg-gray-800 text-gray-200 font-medium">
           Visitor Mode (View &amp; Enquire Only)
+        </span>
+        <span id="cloudSyncStatus" class="px-2 py-0.5 rounded-full bg-[#171c24] text-gray-400 border border-gray-800">
+          Cloud: Connecting...
         </span>
         <span id="modeSubtext" class="hidden sm:inline text-gray-400">
           Authorized staff can log in to manage showroom vehicles, business lines, gallery photos &amp; socials.
@@ -665,6 +668,12 @@
     const STORAGE_KEY = "abm_kabara_motors_data_v1";
     const STAFF_SESSION_KEY = "abm_kabara_staff_session_v1";
 
+    // SUPABASE CLOUD SYNC CONFIG
+    const SUPABASE_URL = "https://tkfrugcgxdrizteaqjdo.supabase.co";
+    const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_YCQr9A8MarGYVELVtfSgrg_gunO39P7";
+    const SUPABASE_TABLE = "showroom_data";
+    const SUPABASE_ROW_ID = "main";
+
     const DEFAULT_VEHICLE_CATALOG = {
       "Toyota": ["Camry", "Corolla", "Highlander", "Hilux", "Land Cruiser", "Land Cruiser Prado", "RAV4", "Sienna", "Tacoma", "Venza", "Avalon", "4Runner"],
       "Lexus": ["ES 350", "GS 350", "GX 460", "IS 250", "LX 570", "NX 300", "RX 350"],
@@ -886,33 +895,120 @@
       return merged;
     }
 
+    function normalizeAppData(parsed) {
+      if (!parsed || typeof parsed !== "object") return structuredClone(DEFAULT_DATA);
+      const vehicles = Array.isArray(parsed.vehicles) && parsed.vehicles.length ? parsed.vehicles : structuredClone(DEFAULT_DATA.vehicles);
+      const catalog = buildMergedInitialCatalog(parsed);
+      vehicles.forEach((v) => {
+        const mk = String(v.make || "").trim();
+        const md = String(v.model || "").trim();
+        if (mk) {
+          const key = Object.keys(catalog).find((k) => k.toLowerCase() === mk.toLowerCase()) || mk;
+          if (!Array.isArray(catalog[key])) catalog[key] = [];
+          if (md && !catalog[key].some((m) => m.toLowerCase() === md.toLowerCase())) {
+            catalog[key].push(md);
+          }
+        }
+      });
+      return {
+        primaryWhatsapp: parsed.primaryWhatsapp || DEFAULT_DATA.primaryWhatsapp,
+        catalog,
+        vehicles,
+        businessLines: Array.isArray(parsed.businessLines) && parsed.businessLines.length ? parsed.businessLines : structuredClone(DEFAULT_DATA.businessLines),
+        socials: Array.isArray(parsed.socials) && parsed.socials.length ? parsed.socials : structuredClone(DEFAULT_DATA.socials)
+      };
+    }
+
     function loadAppData() {
       try {
         const raw = localStorage.getItem(STORAGE_KEY);
         if (!raw) return structuredClone(DEFAULT_DATA);
-        const parsed = JSON.parse(raw);
-        const vehicles = Array.isArray(parsed.vehicles) && parsed.vehicles.length ? parsed.vehicles : structuredClone(DEFAULT_DATA.vehicles);
-        const catalog = buildMergedInitialCatalog(parsed);
-        vehicles.forEach((v) => {
-          const mk = String(v.make || "").trim();
-          const md = String(v.model || "").trim();
-          if (mk) {
-            const key = Object.keys(catalog).find((k) => k.toLowerCase() === mk.toLowerCase()) || mk;
-            if (!Array.isArray(catalog[key])) catalog[key] = [];
-            if (md && !catalog[key].some((m) => m.toLowerCase() === md.toLowerCase())) {
-              catalog[key].push(md);
-            }
-          }
-        });
-        return {
-          primaryWhatsapp: parsed.primaryWhatsapp || DEFAULT_DATA.primaryWhatsapp,
-          catalog,
-          vehicles,
-          businessLines: Array.isArray(parsed.businessLines) && parsed.businessLines.length ? parsed.businessLines : structuredClone(DEFAULT_DATA.businessLines),
-          socials: Array.isArray(parsed.socials) && parsed.socials.length ? parsed.socials : structuredClone(DEFAULT_DATA.socials)
-        };
+        return normalizeAppData(JSON.parse(raw));
       } catch (err) {
         return structuredClone(DEFAULT_DATA);
+      }
+    }
+
+    function setCloudStatus(text, tone = "neutral") {
+      const el = document.getElementById("cloudSyncStatus");
+      if (!el) return;
+      el.textContent = text;
+      if (tone === "synced") {
+        el.className = "px-2 py-0.5 rounded-full bg-emerald-950/80 text-emerald-300 border border-emerald-700/50";
+      } else if (tone === "error") {
+        el.className = "px-2 py-0.5 rounded-full bg-amber-950/80 text-amber-300 border border-amber-700/50";
+      } else {
+        el.className = "px-2 py-0.5 rounded-full bg-[#171c24] text-gray-400 border border-gray-800";
+      }
+    }
+
+    function getSupabaseHeaders(preferRepresentation = false) {
+      const headers = {
+        "apikey": SUPABASE_PUBLISHABLE_KEY,
+        "Authorization": `Bearer ${SUPABASE_PUBLISHABLE_KEY}`,
+        "Content-Type": "application/json"
+      };
+      if (preferRepresentation) {
+        headers["Prefer"] = "return=representation,resolution=merge-duplicates";
+      }
+      return headers;
+    }
+
+    async function pushToSupabase(payloadData) {
+      setCloudStatus("Cloud: Saving...", "neutral");
+      try {
+        const endpoint = `${SUPABASE_URL}/rest/v1/${SUPABASE_TABLE}?on_conflict=id`;
+        const res = await fetch(endpoint, {
+          method: "POST",
+          headers: getSupabaseHeaders(true),
+          body: JSON.stringify([
+            {
+              id: SUPABASE_ROW_ID,
+              payload: payloadData,
+              updated_at: new Date().toISOString()
+            }
+          ])
+        });
+
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status}`);
+        }
+        setCloudStatus("Cloud: Synced Live", "synced");
+      } catch (err) {
+        setCloudStatus("Cloud: Local Only (Check SQL/RLS)", "error");
+      }
+    }
+
+    async function pullFromSupabase() {
+      setCloudStatus("Cloud: Syncing...", "neutral");
+      try {
+        const endpoint = `${SUPABASE_URL}/rest/v1/${SUPABASE_TABLE}?id=eq.${encodeURIComponent(SUPABASE_ROW_ID)}&select=payload`;
+        const res = await fetch(endpoint, {
+          method: "GET",
+          headers: getSupabaseHeaders(false)
+        });
+
+        if (!res.ok) {
+          throw new Error(`HTTP ${res.status}`);
+        }
+
+        const rows = await res.json();
+        if (Array.isArray(rows) && rows.length > 0 && rows[0].payload) {
+          appData = normalizeAppData(rows[0].payload);
+          try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(appData));
+          } catch (e) {}
+          syncContactsSummary();
+          renderFilterDropdowns();
+          applyFilters();
+          renderBusinessLines();
+          renderSocials();
+          setCloudStatus("Cloud: Synced Live", "synced");
+        } else {
+          await pushToSupabase(appData);
+        }
+      } catch (err) {
+        setCloudStatus("Cloud: Offline / Local Cache", "error");
       }
     }
 
@@ -920,8 +1016,9 @@
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(appData));
       } catch (err) {
-        // Ignore storage quota errors on large local images
+        // Ignore localStorage quota errors on large local images
       }
+      pushToSupabase(appData);
     }
 
     let appData = loadAppData();
@@ -1082,7 +1179,8 @@
 
     function resetSavedData() {
       localStorage.removeItem(STORAGE_KEY);
-      appData = loadAppData();
+      appData = structuredClone(DEFAULT_DATA);
+      saveAppData();
       resetFilters(true);
       syncContactsSummary();
       renderBusinessLines();
@@ -1463,7 +1561,6 @@
         }
       }
 
-      saveAppData();
       renderFilterDropdowns();
       return resolvedMakeKey;
     }
@@ -2059,6 +2156,7 @@
       syncContactsSummary();
       renderFilterDropdowns();
       syncStaffUI();
+      pullFromSupabase();
     });
   </script>
 </body>
